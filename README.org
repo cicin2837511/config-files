@@ -1,0 +1,10 @@
+#+title: Readme
+#+author: cicin
+#+description: these are my config files
+
+* What is this repository
+these are just my config files, it's helpfult ot have a repo like this because I can just copy my files anywhere I want.
+
+#+begin_quote
+this readme is actually useless, I just don't want github to constantly say: Help people interested in this repository understand your project by adding a README.
+#+end_quote
