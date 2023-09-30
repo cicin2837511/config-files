@@ -72,7 +72,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [ ((modm,               xK_Return), spawn $ XMonad.terminal conf)
 
     -- launch emacs
-    , ((modm .|. shiftMask, xK_t     ), spawn "alacritty -e vim ~/vimwiki/index.wiki")
+    , ((modm .|. shiftMask, xK_t     ), spawn "emacsclient -c -a 'emacs'")
 
     -- brave browser
     , ((modm .|. shiftMask, xK_x     ), spawn "brave")
@@ -236,6 +236,7 @@ myManageHook = composeAll
     , className =? "Gimp"           --> doFloat
     , className =? "Chromium"       --> doFloat
     , className =? "Brave-browser"  --> doFloat
+    , className =? "conky"          --> doFloat
     , className =? "Polybar"        --> doFloat
     , resource  =? "desktop_window" --> doIgnore
     , resource  =? "kdesktop"       --> doIgnore ]
