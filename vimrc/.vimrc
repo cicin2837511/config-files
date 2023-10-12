@@ -1,4 +1,5 @@
-""""""""""""""""""""""""""_""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""                         
+"                         _                 
 " _ __ ___  _   _  __   _(_)_ __ ___ 
 "| '_ ` _ \| | | | \ \ / / | '_ ` _ \
 "| | | | | | |_| |  \ V /| | | | | | |
@@ -10,10 +11,24 @@
 "| (_| (_) | | | |  _| | (_| | |_| | | | (_| | |_| | (_) | | | | |  _| | |  __/
 " \___\___/|_| |_|_| |_|\__, |\__,_|_|  \__,_|\__|_|\___/|_| |_| |_| |_|_|\___|
 """"""""""""""""""""""""|___/"""""""""""""""""""""""""""""""""""""""""""""""""""
-set background=dark
+
+""""""""
+""look""
+""""""""
+
+"numbers
 set number
 set relativenumber
+
+" colors
+set background=dark
+
+" syntax highlighting
 syntax on
+
+"""""""""""""
+"keybindings"
+"""""""""""""
 inoremap kj <Esc>
 cnoremap kj <Esc>
 vnoremap kj <Esc>
@@ -21,34 +36,62 @@ inoremap <C-s> :Files<Cr>
 vnoremap <C-s> :Files<Cr>
 nnoremap <C-s> :Files<Cr>
 cnoremap <C-s> :Files<Cr>
+
+""""""""""
+"behavior"
+""""""""""
+
+" indenting
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
 set autoindent
+
+" some stuff in the background
 set fileformat=unix
 set nocompatible
 set encoding=utf-8
+
+" autocomplete
 set wildmode=longest,list,full
+
+" statusbar
 set laststatus=2
-" Plugins will be downloaded under the specified directory.
+
+"""""""""
+"plugins"
+"""""""""
+
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
-" Declare the list of plugins.
+" some basic good settings
 Plug 'tpope/vim-sensible'
+
+" Themes
 Plug 'junegunn/seoul256.vim'
-"Plug 'itchyny/lightline.vim'
-Plug 'vifm/vifm.vim'
+
+" vimwiki (something like markdown in obsidian or org mode in emacs)
 Plug 'vimwiki/vimwiki'
+
+" finder for any file
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'ap/vim-css-color'
 
-" List ends here. Plugins become visible to Vim after this call.
+" statusbar (needs the 'set statusbar=2' thing on line 59)
+Plug 'vim-airline/vim-airline'
+" Themes for the statusbar
+Plug 'vim-airline/vim-airline-themes'
+
+" color highlighting for example #ff0000 has red background
+Plug 'ap/vim-css-color'
 call plug#end()
 
+""""""""""""""""""""""
+"settings for plugins"
+""""""""""""""""""""""
+
+" vim-airline/vim-airline and vim-airline/vim-airline-themes
 let g:airline_theme='monochrome'
 let g:airline_powerline_fonts = 1
 let g:airline_left_sep = ''

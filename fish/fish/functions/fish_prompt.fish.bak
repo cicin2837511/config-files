@@ -1,0 +1,5 @@
+function fish_prompt
+    set git_branch $(git branch)
+    echo -e "
+\e[1;32m\e[1;42;30m  $USER@archlinux \e[1;46;32m\e[46;30m    "(prompt_pwd)"  \e[m\e[1;44;36m \e[1;44;30m  $git_branch" "\e[m\e[1;34m"\uE0B0" "
+end
